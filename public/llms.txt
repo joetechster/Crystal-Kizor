@@ -1,0 +1,11 @@
+# Crystal Kizor — Architecture & Brand Ecosystem
+
+> Crystal Kizor is an architect, designer, researcher, and ecosystem founder uniting sustainable, climate-responsive architecture with contemporary African material design, built-environment education, and human flourishing.
+
+## Core Initiatives
+- [Studio COKA](/#pillars): Architecture, Interior Design & Construction.
+- [ELEvated](/#pillars): Contemporary Furniture & Product Design rooted in African context.
+- [The Effective Architect (TEA)](/#pillars): Education and media platform empowering architects.
+- [AKO Alliance](/#pillars): Civic educational access and youth opportunities.
+- [Alive and Free](/#pillars): Christian youth movement for healing and purpose.
+- [Speaking Engagements](/#thought-leadership): Keynotes on African cities, climate design, and entrepreneurship.

@@ -1,0 +1,12 @@
+.agents/
+Crystal_s pictures/
+Other assets/
+AGENTS.md
+GEMINI.md
+.env
+scripts/
+node_modules/
+dist/
+lighthouse*
+*.report.json
+*.report.html
