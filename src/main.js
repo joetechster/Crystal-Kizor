@@ -40,7 +40,41 @@ document.addEventListener('DOMContentLoaded', () => {
       smoothScroll.scrollToAnchor('#connect');
     }
   });
+
+  // 5. Deep-Link URL Path & Section Resolution (e.g. /wayfinder -> #wayfinder)
+  handleDeepLinkPath(smoothScroll);
 });
+
+/**
+ * Automatically scrolls to matching section when visiting direct paths (e.g. /wayfinder)
+ */
+function handleDeepLinkPath(smoothScroll) {
+  if (typeof window === 'undefined') return;
+
+  const rawPath = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+  const hash = window.location.hash;
+
+  const PATH_TO_SECTION_MAP = {
+    'wayfinder': '#wayfinder',
+    'showcase': '#showcase',
+    'built-work': '#showcase',
+    'pillars': '#pillars',
+    'three-pillars': '#pillars',
+    'thought-leadership': '#thought-leadership',
+    'voice': '#thought-leadership',
+    'connect': '#connect',
+    'inquiry': '#connect',
+    'philosophy': '#hero'
+  };
+
+  const targetAnchor = hash || PATH_TO_SECTION_MAP[rawPath] || (rawPath && document.getElementById(rawPath) ? `#${rawPath}` : null);
+
+  if (targetAnchor && document.querySelector(targetAnchor)) {
+    setTimeout(() => {
+      smoothScroll.scrollToAnchor(targetAnchor);
+    }, 150);
+  }
+}
 
 /**
  * Lazily loads GalleryModal.js on first hover, focus, or click of an inspection trigger

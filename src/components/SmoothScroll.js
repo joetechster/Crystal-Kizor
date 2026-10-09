@@ -197,6 +197,20 @@ export class SmoothScrollController {
     this.rafId = window.requestAnimationFrame(animateScroll);
   }
 
+  /**
+   * Programmatic smooth scroll to an element anchor ID with header offset.
+   */
+  scrollToAnchor(targetId, headerOffset = 76) {
+    if (typeof window === 'undefined' || !targetId) return;
+    const cleanId = targetId.startsWith('#') ? targetId : `#${targetId}`;
+    const targetEl = this.root.querySelector(cleanId);
+    if (!targetEl) return;
+    const elementPosition = targetEl.getBoundingClientRect().top;
+    const currentY = window.pageYOffset || window.scrollY || 0;
+    const offsetPosition = Math.max(0, elementPosition + currentY - headerOffset);
+    this.scrollToPosition(offsetPosition);
+  }
+
   stopAnimation() {
     this.isAnimating = false;
     if (this.rafId && typeof window !== 'undefined') {
